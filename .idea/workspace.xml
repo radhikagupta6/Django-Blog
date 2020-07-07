@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2355b7c-fab7-47f6-82b6-8c845302ddc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_blog/blog/static/blog/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_blog/blog/templates/blog/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_blog/blog/templates/blog/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_blog/blog/templates/blog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/django_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/django_blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_blog/blog/static/blog/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/blog/static/blog/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
