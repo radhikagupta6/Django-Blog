@@ -1,22 +1,28 @@
 
 {% extends "blog/base.html" %}
+{% block title%}Blog{% endblock title%}
 {% block content%}
-    {% for post in posts%}
-<div class="container">
-    <div class="card m-2" style="width: auto">
-        <img class="card-img-top" src="#" alt="">
-            <div class="card-body">
+    {% for post in object_list %}
+   
+<div class="card m-2 " style="width: auto">
+ 
+  <div class="card-body">
              <h6 class="card-title"><a class="mr-2" href="#">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted }}</small>
+             
+                {% comment %} {{ post.date_posted | date: "F d, Y"}} {% endcomment %}
+                 {{ post.date_posted}}
              </h6>
-            <h3><a class="card-text" href="#">{{ post.title }}</a></h3>
+              <img class="card-img-top" src="{{post.pic.url}}" alt="Card image cap" width="300px" class="m-3">
+            <h3><a class="card-text" href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h3>
                 <p class="card-text">{{ post.content }}</p>
-            <a href="#" class="btn btn-primary" style="width: 50px">Like</a><br>
+                {% comment %} <form action = "{% url 'like_post' post.pk %}" method='POST'> {% endcomment %}
+                    {% csrf_token %}
+                 <button type='submit', name= "post_id", value="{{ post.id }}" class="btn btn-primary btn-sm">Like</button><br>
+                 </form>
             </div>
-    </div>
-<hr>
 </div>
-
+<hr>
+<hr>
 
     {% endfor %}
 

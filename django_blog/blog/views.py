@@ -1,31 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from .models import Post
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy, reverse
+from django.views.generic import ListView,DetailView, CreateView
+from .forms import PostForm
+class HomeView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+    
+    
+class ArticleDetailView(DetailView):
+    model = Post
+    template_name = 'blog/article_details.html'
+    
 
-# Create your views here.
-posts = [
-    {
-        'author': 'Radhika Gupta',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'June 27,2020'
-
-    },
-    {
-        'author': 'Prakhar Gupta',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'June 28,2020'
-
-    }
-]
-
-
-def home(request):
-    context = {
-        'posts': posts,
-    }
-    return render(request, 'blog/home.html', context)
-
-
-def about(request):
-    return render(request, 'blog/about.html',{'title': "About"})
+class AddPostView(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/add_post.html'
+    # fields='__all__'

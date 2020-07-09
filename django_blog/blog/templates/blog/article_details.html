@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% block title %}{{post.title_tag}}{% endblock title%}
+{% block content%}
+<div class='container m-2'>
+    <h1>{{ post.title }}</h1>
+    <small> By : {{ post.author}} </small>
+    <hr>
+    <img  src="{{post.pic.url}}"  width="500px" class="m-3">
+    <br/>
+    <br/>
+    <hr>
+    {{ post.content}}
+    <br/>
+
+    <a href='{% url 'home'%}' class='btn btn-primary m-3'>Back</a>
+
+</div>
+{% endblock content%}
