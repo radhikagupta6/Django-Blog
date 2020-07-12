@@ -14,7 +14,7 @@
     <br/>
     <br/>
     <hr>
-    {{ post.content}}
+    {{ post.content|safe}}
     <br/>
 
     <a href='{% url 'home'%}' class='btn btn-primary m-3'>Back</a>
