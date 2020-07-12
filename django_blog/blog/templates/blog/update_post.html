@@ -1,15 +1,20 @@
 {% extends "blog/base.html" %}
 {% block title %}Edit Blog Post !{% endblock title%}
 {% block content%}
-<h1>Edit Post</h1>
-<br/>
-<br/>
-<div class='form-group'>
-<form method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-{{ form.as_p }}
-<button class='btn btn-primary'>Update</button>
-</form>
-</div>
-
+{% if user.is_authenticated %}
+    <h1>Edit Post</h1>
+    <br/>
+    <br/>
+    <div class='form-group'>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class='btn btn-primary'>Update</button>
+    </form>
+    </div>
+{% else %}
+    <div class="alert alert-warning" role="alert">
+          You are not allowed to edit the post unless you login
+    </div>
+{% endif %}
 {% endblock content%}

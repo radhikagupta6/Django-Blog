@@ -4,8 +4,11 @@
 <div class='container m-2'>
     <h1>{{ post.title }}</h1>
     <small> By : {{ post.author}} </small>
+    {% if user.is_authenticated %}
      <a href='{% url 'update_post' post.pk %}' class='btn btn-success'>Edit Post</a>
      <a href='{% url 'delete_post' post.pk %}' class='btn btn-danger'>Delete Post</a>
+    {% endif %}
+    
     <hr>
     <img  src="{{post.pic.url}}"  width="500px" class="m-3">
     <br/>

@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% block title %}Create a Blog Post !{% endblock title%}
 {% block content%}
+{% if user.is_authenticated %}
 <h1>Add Post</h1>
 <br/>
 <br/>
@@ -11,5 +12,9 @@
 <button class='btn btn-primary'>Post</button>
 </form>
 </div>
-
+{% else %}
+    <div class="alert alert-warning" role="alert">
+          You are not allowed to add any post unless you login
+    </div>
+{% endif %}
 {% endblock content%}
