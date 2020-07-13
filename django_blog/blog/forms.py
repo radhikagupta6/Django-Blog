@@ -1,15 +1,11 @@
 from django import forms
-from .models import Post, Category
+from .models import Post
 
-#choices = [('Entertainment','Entertainment'),('Personal','Personal'),('Food','Food'),('Life','Life')]
-choices = Category.objects.all().values_list('name','name')
-choice_list = []
-for item in choices:
-    choice_list.append(item)
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'pic','author', 'category','content')
+        fields = ('title', 'title_tag', 'pic','author','content')
         widgets = {
             
             'title': forms.TextInput(attrs={
@@ -18,15 +14,13 @@ class PostForm(forms.ModelForm):
                 }),
             'title_tag': forms.TextInput(attrs={
                 'class':'form-control',
-                'placeholder':'Add title tag here',
+                'placeholder':'add title tag here',
                 }),
-            'author': forms.Select(attrs={
+            'author': forms.TextInput(attrs={
                 'class':'form-control',
-                'placeholder':'Add author name here',
-                }),
-            'category': forms.Select(choices= choice_list,attrs={
-                'class':'form-control',
-                'placeholder':'Add author name here',
+                'value':'',
+                'id':'elder',
+                'type': 'hidden'
                 }),
             'content': forms.Textarea(attrs={
                 'class':'form-control',
