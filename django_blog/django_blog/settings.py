@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'blog',
     'members',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

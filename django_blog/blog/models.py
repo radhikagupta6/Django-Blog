@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.shortcuts import render
 from datetime import datetime, date
+from ckeditor.fields import RichTextField
 # Create your models here.
 
     
@@ -12,7 +13,8 @@ class Post(models.Model):
     title = models.CharField(max_length= 255, null=False, blank=False)
     title_tag = models.CharField(max_length= 255)
     pic = models.ImageField(upload_to="uploads", default='e.png')
-    content = models.TextField(max_length=5000, null=False, blank=False)
+    #content = models.TextField(max_length=5000, null=False, blank=False)
+    content = RichTextField(blank=True, null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name="blog_post")
