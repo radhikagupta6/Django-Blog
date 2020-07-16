@@ -20,7 +20,7 @@
              
                 <img class="" src="{{post.pic.url}}" alt="Post image" width="250px" class="m-3">
                 <h3><a class="card-text" href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h3>
-                <p class="card-text">{{ post.content |safe|truncatewords:"50"|linebreaks }}</p>
+                <p class="card-text">{{ post.snippet }}</p>
                 <a href="{% url 'article-detail' post.pk %}">read more</a>
                    
     </div>

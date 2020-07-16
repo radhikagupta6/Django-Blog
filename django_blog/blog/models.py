@@ -12,6 +12,7 @@ from ckeditor.fields import RichTextField
 class Post(models.Model):
     title = models.CharField(max_length= 255, null=False, blank=False)
     title_tag = models.CharField(max_length= 255)
+    snippet = models.CharField(max_length= 255)
     pic = models.ImageField(upload_to="uploads", default='e.png')
     #content = models.TextField(max_length=5000, null=False, blank=False)
     content = RichTextField(blank=True, null=True)
