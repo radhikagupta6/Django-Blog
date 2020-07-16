@@ -1,4 +1,4 @@
-# Django-Blog
+# Blog
 
 This is a web application for posting blogs. 
 
