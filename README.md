@@ -1,3 +1,20 @@
-# Django-Blog
+# Blog
 
-This is web app based on Django framework and uses HTML, Bootstrap, CSS for the frontend. 
+This is a web application for posting blogs. 
+
+## Frontend
+- HTML
+- CSS
+- Bootstrap
+## Framework
+- Django
+
+## Features 
+- Adding Post 
+- Deleting Post 
+- Editing Post
+- Signup
+- Login 
+- Edit Profile
+- Change Password
+
