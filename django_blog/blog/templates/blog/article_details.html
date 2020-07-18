@@ -29,8 +29,24 @@
         
         <br/><br/>
         <hr>
+        
+        <br/>
+        <br/>
+        <h4>About the author :</h4> </br>
+       
+        
+        <div class="card" style="width:300px">
+        <div class="card-body">
+            <h4 class="card-title">{{ post.author}}</h4>
+            <p class="card-text">{{ post.author.profile.bio }}</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+            <img class="card-img-bottom" src="{{post.author.profile.profile_pic.url}}" alt="Card image" style="width:100%">
+        </div>
+        </div>
+        <br/>
         <br/>
         <a href='{% url 'home'%}' class='btn btn-primary m-3'>Back</a>
-
+        </div>
     </div>
 {% endblock content%}
