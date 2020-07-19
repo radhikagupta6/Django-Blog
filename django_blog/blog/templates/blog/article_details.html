@@ -1,6 +1,48 @@
 {% extends "blog/base.html" %}
-{% block title %}{{post.title_tag}}{% endblock title%}
+{% block title %}{{post.title_tag}}
+{% endblock title%}
 {% block content%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding: 10px;
+  font-size: 10px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+</style>
     <div class='container m-2'>
     
         <h1>{{ post.title }}</h1>
@@ -38,6 +80,27 @@
         <div class="card" style="width:300px">
         <div class="card-body">
             <h4 class="card-title">{{ post.author}}</h4>
+            <p class='small text-muted'>
+            
+            {% if post.author.profile.website_url%}
+            <a href="{{ post.author.profile.website_url}}" class="fa fa-dribbble"></a>
+            {% endif %}
+            
+            {% if post.author.profile.facebook_url%}
+            <a href="{{ post.author.profile.facebook_url}}" class="fa fa-facebook"></a>
+            {% endif %}
+            
+            {% if post.author.profile.twitter_url%}
+            <a href="{{ post.author.profile.twitter_url}}" class="fa fa-twitter"></a>
+            {% endif %}
+            
+            {% if post.author.profile.twitter_url%}
+            <a href="{{ post.author.profile.linkedin_url}}" class="fa fa-linkedin"></a>
+            {% endif %}
+            {% if post.author.profile.instagram_url %}
+            <a href="{{ post.author.profile.instagram_url}}" class="fa fa-instagram"></a>
+            {% endif %}
+            </p>
             <p class="card-text">{{ post.author.profile.bio }}</p>
             <a href="#" class="btn btn-primary">See Profile</a>
         </div>
