@@ -102,7 +102,7 @@
             {% endif %}
             </p>
             <p class="card-text">{{ post.author.profile.bio }}</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
+            <a href="{% url 'show_profile_page' post.author.profile.id %}" class="btn btn-primary">See Profile</a>
         </div>
             <img class="card-img-bottom" src="{{post.author.profile.profile_pic.url}}" alt="Card image" style="width:100%">
         </div>
