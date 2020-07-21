@@ -3,7 +3,7 @@
 {% load static %}
 {% block title%}User Profile{% endblock title%}
 {% block content%}
-<h1>USer Profile</h1>
+<h1>Profile</h1>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .fa {
@@ -47,10 +47,10 @@
 </style>
         <h4>About the author :</h4> </br>
        
-        
+        <div class ='container'>
         <div class="card" style="width: auto">
         <div class="card-body">
-            <h4 class="card-title">{{ page_user.user.author}}</h4>
+            <h4 class="card-title">{{ page_user.user.first_name}}  {{ page_user.user.last_name}}</h4>
             <p class='small text-muted'>
             
             {% if page_user.website_url%}
@@ -75,7 +75,7 @@
             <p class="card-text">{{ page_user.bio }}</p>
             
         </div>
-            <img class="card-img-bottom" src="{{page_user.profile_pic.url}}" alt="Card image" style="width:100%">
+            <img class="card-img-bottom" src="{{page_user.profile_pic.url}}" alt="Card image" style="width:30%">
         </div>
         </div>
         <br/>
@@ -83,5 +83,5 @@
         
         </div>
     </div>
-
+</div>
 {% endblock content %}
