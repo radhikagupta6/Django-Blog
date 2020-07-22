@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block title %}Create Profile Page !{% endblock title%}
+{% block content%}
+    {% if user.is_authenticated %}
+
+        <h1>Create Profile Page</h1>
+        <br/>
+        <br/>
+            <div class='form-group'>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <button class='btn btn-primary'>Create Profile Page</button>
+                </form>
+            </div>
+            
+    {% else %}
+            <div class="alert alert-warning" role="alert">
+                You are not allowed to create profile unless you login
+            </div>
+    
+    
+    {% endif %}
+
+{% endblock content%}
