@@ -1,6 +1,8 @@
 {% extends "blog/base.html" %}
 {% block title %}Sign up{% endblock title%}
 {% block content%}
+
+<div class='container mx-auto bg-light'style='border:solid;padding:2%;'>
 <h1>Sign up</h1>
 <br/>
 <br/>
@@ -10,6 +12,7 @@
 {{ form.as_p }}
 <button class='btn btn-primary'>Sign up</button>
 </form>
+</div>
 </div>
 
 {% endblock content%}
