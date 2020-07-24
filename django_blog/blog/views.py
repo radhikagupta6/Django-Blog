@@ -4,8 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView,DetailView, CreateView, UpdateView, DeleteView
 from .forms import PostForm, EditForm, CommentForm
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/members/login/')
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
